@@ -5,24 +5,31 @@ abstract class AppColors {
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
   static const Color red = Color(0xFFFF4D4D);
+  
 
   // ==== Light Mode ====
   static const Color lightBackground = Color(0xFFF7F7F7);
   static const Color lightCard = Color(0xFFFFFFFF);
-  static const Color lightPrimary = Color(0xFF0059FF); // اللون الأزرق الرئيسي للأزرار
+  static const Color lightPrimary = Color(
+    0xFF0059FF,
+  ); // اللون الأزرق الرئيسي للأزرار
+  static const Color lightlable = Color(0xFF454B60);
   static const Color lightTextPrimary = Color(0xFF0C0C0C);
   static const Color lightTextSecondary = Color(0xFF707070);
   static const Color lightIcon = Color(0xFF1E1E1E);
-  static const Color lightProgress = Color(0xFF0C65FF);
+  static const Color lightProgress = Color(0xFF0084FF);
   static const Color lightBottomNav = Color(0xFFFFFFFF);
 
   // ==== Dark Mode ====
   static const Color darkBackground = Color(0xFF0B0B0B);
   static const Color darkCard = Color(0xFF161616);
-  static const Color darkPrimary = Color(0xFF0077FF); // أزرق أفتح شوية في المود الغامق
+  static const Color darkPrimary = Color(
+    0xFF0077FF,
+  ); // أزرق أفتح شوية في المود الغامق
+  static const Color darklable = Color(0xFFFFFFFF);
   static const Color darkTextPrimary = Color(0xFFFFFFFF);
   static const Color darkTextSecondary = Color(0xFFB0B0B0);
   static const Color darkIcon = Color(0xFFFFFFFF);
-  static const Color darkProgress = Color(0xFF0C65FF);
+  static const Color darkProgress = Color(0xFF0084FF);
   static const Color darkBottomNav = Color(0xFF161616);
 }

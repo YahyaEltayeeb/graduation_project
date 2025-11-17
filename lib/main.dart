@@ -7,6 +7,7 @@ import 'package:graduation_project/core/di/di.dart';
 import 'package:graduation_project/core/general_cubit/local_cubit.dart';
 import 'package:graduation_project/core/l10n/translations/app_localizations.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
@@ -32,7 +33,7 @@ class SuperFitnessApp extends StatelessWidget {
           theme: AppTheme.darkTheme,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: RouteGenerator.getRoute,
-          initialRoute: AppRoutes.appSections,
+          initialRoute: AppRoutes.login,
         );
       },
     );
