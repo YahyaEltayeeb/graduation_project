@@ -13,13 +13,15 @@ abstract class AppTheme {
         secondary: AppColors.lightProgress,
         surface: AppColors.lightCard,
         onPrimary: AppColors.white,
-        onSecondary: AppColors.white,
-        onSurface: AppColors.lightTextPrimary,
+        onSecondary: AppColors.black,
+        onSurface: AppColors.lightTextSecondary,
         error: AppColors.red,
         onError: AppColors.white,
       ),
+      primaryIconTheme: IconThemeData(color: AppColors.darkBottomNav),
+      iconTheme: IconThemeData(color: AppColors.darkBottomNav),
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.lightPrimary,
+        backgroundColor: AppColors.lightCard,
         centerTitle: true,
         iconTheme: IconThemeData(color: AppColors.lightIcon),
         titleTextStyle: GoogleFonts.balooThambi2(
@@ -31,7 +33,7 @@ abstract class AppTheme {
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: AppColors.lightBottomNav,
         selectedItemColor: AppColors.lightPrimary,
-        unselectedItemColor: AppColors.lightTextSecondary,
+        unselectedItemColor: AppColors.grey,
       ),
       textTheme: _textTheme(isDarkMode: false),
       progressIndicatorTheme: ProgressIndicatorThemeData(
@@ -47,17 +49,15 @@ abstract class AppTheme {
       colorScheme: ColorScheme.dark(
         primary: AppColors.darkPrimary,
         secondary: AppColors.darkProgress,
-        background: AppColors.darkBackground,
         surface: AppColors.darkCard,
         onPrimary: AppColors.white,
         onSecondary: AppColors.white,
-        onBackground: AppColors.darkTextPrimary,
-        onSurface: AppColors.darkTextPrimary,
+        onSurface: AppColors.blacklight,
         error: AppColors.red,
         onError: AppColors.white,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.darkPrimary,
+        backgroundColor: AppColors.darkCard,
         centerTitle: true,
         iconTheme: IconThemeData(color: AppColors.darkIcon),
         titleTextStyle: GoogleFonts.balooThambi2(
@@ -66,10 +66,11 @@ abstract class AppTheme {
           fontWeight: AppFontWeight.bold,
         ),
       ),
+      iconTheme: IconThemeData(color: AppColors.grey),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: AppColors.darkBottomNav,
         selectedItemColor: AppColors.darkPrimary,
-        unselectedItemColor: AppColors.darkTextSecondary,
+        unselectedItemColor: AppColors.grey,
       ),
       textTheme: _textTheme(isDarkMode: true),
       progressIndicatorTheme: ProgressIndicatorThemeData(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/app_section/app_section.dart';
+import 'package:graduation_project/features/home/presentation/pages/home_screen.dart';
 import '../../features/auth/login/presentation/pages/login_screen.dart';
 import 'app_routes.dart';
 
@@ -10,6 +11,9 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => const LoginScreen());
       case AppRoutes.appSections:
         return MaterialPageRoute(builder: (context) => const AppSection());
+       case AppRoutes.home:
+       return MaterialPageRoute(builder: (context)=>const HomeScreen()) ;
+       
       default:
         return unDefinedRoute();
     }

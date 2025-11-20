@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/config/theme/colors.dart';
 import 'package:graduation_project/core/extensions/extensions.dart';
 
 class CustomElevatedButton extends StatelessWidget {
@@ -21,8 +22,10 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = BorderRadius.circular(context.height * 0.1);
-    final buttonWidth = isLoading ? context.width * 0.4 : MediaQuery.of(context).size.width;
+    final borderRadius = BorderRadius.circular(context.height * 0.015);
+    final buttonWidth = isLoading
+        ? context.width * 0.3
+        : MediaQuery.of(context).size.width * 0.7;
 
     return Center(
       child: AnimatedContainer(
@@ -53,7 +56,7 @@ class CustomElevatedButton extends StatelessWidget {
             : ElevatedButton(
                 onPressed: onPressed,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: containerColor ?? context.colorScheme.primary,
+                  backgroundColor: AppColors.lightProgress,
                   shape: RoundedRectangleBorder(borderRadius: borderRadius),
                 ),
                 child: DefaultTextStyle(
