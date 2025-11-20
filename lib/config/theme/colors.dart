@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 abstract class AppColors {
   // ==== Basics ====
   static const Color white = Color(0xFFFFFFFF);
@@ -11,10 +10,11 @@ abstract class AppColors {
   static const Color lightCard = Color(0xFFFFFFFF);
   static const Color lightPrimary = Color(0xFF0059FF); // اللون الأزرق الرئيسي للأزرار
   static const Color lightTextPrimary = Color(0xFF0C0C0C);
-  static const Color lightTextSecondary = Color(0xFF707070);
+  static const Color lightTextSecondary = Color(0xffE4E4E4);
   static const Color lightIcon = Color(0xFF1E1E1E);
   static const Color lightProgress = Color(0xFF0C65FF);
   static const Color lightBottomNav = Color(0xFFFFFFFF);
+  static const Color grey=Color(0xff5F5F5F);
 
   // ==== Dark Mode ====
   static const Color darkBackground = Color(0xFF0B0B0B);
@@ -25,4 +25,5 @@ abstract class AppColors {
   static const Color darkIcon = Color(0xFFFFFFFF);
   static const Color darkProgress = Color(0xFF0C65FF);
   static const Color darkBottomNav = Color(0xFF161616);
+  static const Color blacklight=Color(0xff101114);
 }
