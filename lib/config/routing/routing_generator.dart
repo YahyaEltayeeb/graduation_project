@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/app_section/app_section.dart';
+import 'package:graduation_project/features/auth/login/register/register_screen.dart';
+import 'package:graduation_project/features/auth/login/register/stu_register_screen.dart';
 import '../../features/auth/login/presentation/pages/login_screen.dart';
 import 'app_routes.dart';
 
@@ -10,6 +12,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => const LoginScreen());
       case AppRoutes.appSections:
         return MaterialPageRoute(builder: (context) => const AppSection());
+      case AppRoutes.register:
+        return MaterialPageRoute(builder: (context) => const RegisterScreen());
+      case AppRoutes.stuRegister:
+        return MaterialPageRoute(
+          builder: (context) => const StuRegisterScreen(),
+        );
       default:
         return unDefinedRoute();
     }

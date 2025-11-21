@@ -29,10 +29,11 @@ class SuperFitnessApp extends StatelessWidget {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           locale: Locale(state.languageCode),
-          theme: AppTheme.darkTheme,
+          theme: AppTheme.lightTheme,
+          themeMode: ThemeMode.system,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: RouteGenerator.getRoute,
-          initialRoute: AppRoutes.appSections,
+          initialRoute: AppRoutes.login,
         );
       },
     );
