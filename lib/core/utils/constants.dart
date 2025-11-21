@@ -9,6 +9,13 @@ abstract class AppConstants {
   static const String languageCode = 'languageCode';
   static const String arKey = 'ar';
   static const String enKey = 'en';
+
+  // 🔹 darkAndLight Keys
+   
+   static const String isDark='false';
+
+
+
   
   // 🔹 General Constants
   static const String noInternet = 'No Internet Connection';
@@ -17,6 +24,9 @@ abstract class AppConstants {
   static const String helpContentKey = "help_screen_content";
   static const String privacyPolicyContentKey = "privacy_policy";
   static const String securityRolesContentKey = "security_roles_config";
+
+
+
 
  
 
