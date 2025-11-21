@@ -8,6 +8,7 @@ class LoginType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var locale=context.localization;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -31,7 +32,7 @@ class LoginType extends StatelessWidget {
                 children: [
                   Image.asset(AppAssets.google),
                   Text(
-                    'Google',
+                  locale.google  ,
                     style: context.textTheme.displayMedium!.copyWith(
                       color: AppColors.lightProgress,
                       fontSize: 16,
@@ -56,20 +57,18 @@ class LoginType extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 color: AppColors.lightProgress,
               ),
-              child: Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset(AppAssets.facebook),
-                    Text(
-                      'Facebook',
-                      style: context.textTheme.displayMedium!.copyWith(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(AppAssets.facebook),
+                  Text(
+                    locale.facebook,
+                    style: context.textTheme.displayMedium!.copyWith(
+                      color: Colors.white,
+                      fontSize: 16,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

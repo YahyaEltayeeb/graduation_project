@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/config/routing/app_routes.dart';
 import 'package:graduation_project/config/routing/routing_extensions.dart';
 import 'package:graduation_project/config/theme/colors.dart';
 import 'package:graduation_project/core/components/custom_elevated_button.dart';
@@ -18,25 +19,26 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    var locale=context.localization;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+         // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AuthLogo(
-              desc: 'Enter your username and passward to login',
-              pross: 'Login',
+              desc: locale.enter_your_username_and_password_to_login,
+              pross: locale.login,
             ),
             SizedBox(height: context.height * 0.05),
             AuthTextField(
               icon: Icons.person,
-              label: 'Username',
+              label: locale.username,
               validator: (value) => Validations.validateName(context, value),
             ),
             SizedBox(height: context.height * 0.04),
             AuthTextField(
               icon: Icons.key,
-              label: 'Password',
+              label: locale.password,
               isPassword: true,
               showForgotPassword: true,
               validator: (value) =>
@@ -47,14 +49,14 @@ class _LoginScreenState extends State<LoginScreen> {
               onPressed: () {},
               isLoading: false,
               widget: Text(
-                'Login',
+                locale.login,
                 style: context.textTheme.displayMedium!.copyWith(
                   color: Colors.white,
                 ),
               ),
             ),
             SizedBox(height: 10),
-            Text('Or login with', style: context.textTheme.bodyLarge),
+            Text(locale.or_login_with, style: context.textTheme.bodyLarge),
             SizedBox(height: context.height * 0.025),
             LoginType(),
             SizedBox(height: context.height * 0.025),
@@ -62,15 +64,15 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Donot have an account?',
+                  locale.don_t_have_an_account,
                   style: context.textTheme.bodyLarge,
                 ),
                 InkWell(
                   onTap: () {
-                    context.pushNamed('/register');
+                    context.pushNamed(AppRoutes.register);
                   },
                   child: Text(
-                    'Register',
+                    locale.register,
                     style: context.textTheme.displayMedium!.copyWith(
                       color: AppColors.lightProgress,
                       fontSize: 16,

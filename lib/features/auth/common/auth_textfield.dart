@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/config/theme/colors.dart';
 import 'package:graduation_project/core/extensions/extensions.dart';
 
-
 class AuthTextField extends StatefulWidget {
   final String label;
   final IconData icon;
@@ -62,6 +61,10 @@ class _AuthTextFieldState extends State<AuthTextField> {
                   color: context.colorScheme.error,
                   width: 1,
                 ),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(width * 0.03),
+                borderSide: const BorderSide(color: AppColors.red),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(width * 0.03),

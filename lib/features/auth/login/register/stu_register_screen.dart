@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/components/custom_elevated_button.dart';
 import 'package:graduation_project/core/extensions/extensions.dart';
-import 'package:graduation_project/features/auth/common/auth_dropdoen_textfield.dart';
+import 'package:graduation_project/features/auth/common/auth_dropdown_textfield.dart';
 import 'package:graduation_project/features/auth/common/auth_logo.dart';
 
 class StuRegisterScreen extends StatefulWidget {
@@ -14,55 +14,61 @@ class StuRegisterScreen extends StatefulWidget {
 class _StuRegisterScreenState extends State<StuRegisterScreen> {
   @override
   Widget build(BuildContext context) {
+    var locale = context.localization;
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.transparent),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AuthLogo(desc: 'Enter your details to register', pross: 'Register'),
+            AuthLogo(
+              desc: locale.enter_your_details_to_register,
+              pross: locale.register,
+            ),
             SizedBox(height: context.height * 0.05),
-            AuthDropdoenTextfield(
+            AuthDropdownTextfield(
               icon: Icons.abc,
-              label: 'Student',
+              label: locale.student,
               items: [''],
               showForgotPassword: false,
               forgotText: '',
             ),
             SizedBox(height: context.height * 0.025),
-              AuthDropdoenTextfield(
+            AuthDropdownTextfield(
               icon: Icons.cast_for_education,
-              label: 'Collage',
+              label: locale.collage,
               items: [''],
               showForgotPassword: false,
               forgotText: '',
             ),
-            SizedBox(height: context.height * 0.025),  AuthDropdoenTextfield(
+            SizedBox(height: context.height * 0.025),
+            AuthDropdownTextfield(
               icon: Icons.book,
-              label: 'Department',
+              label: locale.department,
               items: [''],
               showForgotPassword: false,
               forgotText: '',
             ),
             SizedBox(height: context.height * 0.025),
-            AuthDropdoenTextfield(
+            AuthDropdownTextfield(
               icon: Icons.now_widgets,
-              label: 'Current Year',
+              label: locale.current_year,
               items: [''],
               showForgotPassword: false,
               forgotText: '',
             ),
             SizedBox(height: context.height * 0.025),
-            AuthDropdoenTextfield(
+            AuthDropdownTextfield(
               icon: Icons.no_encryption,
-              label: 'Semester',
+              label: locale.semester,
               items: [''],
               showForgotPassword: false,
               forgotText: '',
             ),
             SizedBox(height: context.height * 0.025),
-            AuthDropdoenTextfield(
+            AuthDropdownTextfield(
               icon: Icons.toll_rounded,
-              label: 'Track',
+              label: locale.track,
               items: [''],
               showForgotPassword: false,
               forgotText: '',
@@ -72,7 +78,7 @@ class _StuRegisterScreenState extends State<StuRegisterScreen> {
               onPressed: () {},
               isLoading: false,
               widget: Text(
-                'Next',
+                locale.next,
                 style: context.textTheme.displayMedium!.copyWith(
                   color: Colors.white,
                 ),

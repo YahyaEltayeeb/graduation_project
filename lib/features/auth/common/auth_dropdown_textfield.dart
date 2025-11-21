@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/config/theme/colors.dart';
 import 'package:graduation_project/core/extensions/extensions.dart';
 
-class AuthDropdoenTextfield extends StatefulWidget {
+class AuthDropdownTextfield extends StatefulWidget {
   final String label;
   final IconData icon;
   final String? value;
@@ -13,7 +13,7 @@ class AuthDropdoenTextfield extends StatefulWidget {
   final String forgotText;
   final VoidCallback? onForgotTap;
 
-  const AuthDropdoenTextfield({
+  const AuthDropdownTextfield({
     super.key,
     required this.label,
     required this.icon,
@@ -27,10 +27,10 @@ class AuthDropdoenTextfield extends StatefulWidget {
   });
 
   @override
-  State<AuthDropdoenTextfield> createState() => _AuthDropdoenTextfieldState();
+  State<AuthDropdownTextfield> createState() => _AuthDropdownTextfieldState();
 }
 
-class _AuthDropdoenTextfieldState extends State<AuthDropdoenTextfield> {
+class _AuthDropdownTextfieldState extends State<AuthDropdownTextfield> {
   String? selectedValue;
 
   @override
@@ -41,7 +41,7 @@ class _AuthDropdoenTextfieldState extends State<AuthDropdoenTextfield> {
 
   @override
   Widget build(BuildContext context) {
-     final width = context.width;
+    final width = context.width;
     final height = context.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -65,7 +65,10 @@ class _AuthDropdoenTextfieldState extends State<AuthDropdoenTextfield> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(width * 0.03),
-                    borderSide: BorderSide(color: AppColors.darkPrimary, width: 1),
+                    borderSide: BorderSide(
+                      color: AppColors.darkPrimary,
+                      width: 1,
+                    ),
                   ),
                   errorText: state.errorText,
                   prefixIcon: Icon(
@@ -82,7 +85,10 @@ class _AuthDropdoenTextfieldState extends State<AuthDropdoenTextfield> {
                   child: DropdownButton<String>(
                     isExpanded: true,
                     value: selectedValue,
-                    hint: Text('Select an option', style: context.textTheme.titleMedium),
+                    hint: Text(
+                      context.localization.select_an_option,
+                      style: context.textTheme.titleMedium,
+                    ),
                     items: widget.items.map((item) {
                       return DropdownMenuItem<String>(
                         value: item,

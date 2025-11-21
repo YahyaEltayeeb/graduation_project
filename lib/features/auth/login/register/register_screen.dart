@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/config/routing/app_routes.dart';
 import 'package:graduation_project/config/routing/routing_extensions.dart';
 import 'package:graduation_project/core/components/custom_elevated_button.dart';
 import 'package:graduation_project/core/extensions/extensions.dart';
 import 'package:graduation_project/core/helpers/validators.dart';
-import 'package:graduation_project/features/auth/common/auth_dropdoen_textfield.dart';
+import 'package:graduation_project/features/auth/common/auth_dropdown_textfield.dart';
 import 'package:graduation_project/features/auth/common/auth_logo.dart';
 import 'package:graduation_project/features/auth/common/auth_textfield.dart';
 
@@ -17,28 +18,32 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
+    var locale = context.localization;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AuthLogo(desc: 'Enter your details to register', pross: 'Register'),
+            AuthLogo(
+              desc: locale.enter_your_details_to_register,
+              pross: locale.register,
+            ),
             SizedBox(height: context.height * 0.05),
             AuthTextField(
               icon: Icons.person,
-              label: 'Name',
+              label: locale.name,
               validator: (value) => Validations.validateName(context, value),
             ),
             SizedBox(height: context.height * 0.025),
             AuthTextField(
               icon: Icons.email,
-              label: 'Email',
+              label: locale.email,
               validator: (value) => Validations.validateEmail(context, value),
             ),
             SizedBox(height: context.height * 0.025),
             AuthTextField(
               icon: Icons.key,
-              label: 'Password',
+              label: locale.password,
               isPassword: true,
               showForgotPassword: false,
               validator: (value) =>
@@ -47,7 +52,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SizedBox(height: context.height * 0.025),
             AuthTextField(
               icon: Icons.key,
-              label: 'Confirm Password',
+              label: locale.confirm_password,
               isPassword: true,
               showForgotPassword: false,
               validator: (value) =>
@@ -56,13 +61,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SizedBox(height: context.height * 0.025),
             AuthTextField(
               icon: Icons.mobile_friendly,
-              label: 'Mobile Number',
+              label: locale.mobile_number,
               validator: (value) => Validations.validateEmail(context, value),
             ),
             SizedBox(height: context.height * 0.025),
-            AuthDropdoenTextfield(
+            AuthDropdownTextfield(
               icon: Icons.no_encryption,
-              label: 'Register As',
+              label: locale.register_as,
               items: ['Student', 'Graduated'],
               showForgotPassword: false,
               forgotText: '',
@@ -70,11 +75,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SizedBox(height: context.height * 0.04),
             CustomElevatedButton(
               onPressed: () {
-                context.pushNamed('/stuRegister');
+                context.pushNamed(AppRoutes.stuRegister);
               },
               isLoading: false,
               widget: Text(
-                'Next',
+                locale.next,
                 style: context.textTheme.displayMedium!.copyWith(
                   color: Colors.white,
                 ),

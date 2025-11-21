@@ -10,21 +10,21 @@ class AuthLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+     mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Center(
           child: Container(
             width: context.width * 0.9,
-           
+
             color: Theme.of(context).scaffoldBackgroundColor,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Theme.of(context).brightness == Brightness.light
-                    ? Image.asset(AppAssets.appLogoLight)
+                    ? Image.asset(AppAssets.appLogoLight,)
                     : Image.asset(AppAssets.appLogoDark),
                 Text(
-                 pross,
+                  pross,
                   style: Theme.of(
                     context,
                   ).textTheme.headlineLarge!.copyWith(fontSize: 32),

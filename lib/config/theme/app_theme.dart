@@ -9,7 +9,7 @@ abstract class AppTheme {
     return ThemeData(
       scaffoldBackgroundColor: AppColors.lightBackground,
       colorScheme: ColorScheme.light(
-       brightness: Brightness.light,
+        brightness: Brightness.light,
         primary: AppColors.lightPrimary,
         secondary: AppColors.lightProgress,
         surface: AppColors.lightCard,
@@ -19,7 +19,7 @@ abstract class AppTheme {
         error: AppColors.red,
         onError: AppColors.white,
       ),
-      
+
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.lightPrimary,
         centerTitle: true,
