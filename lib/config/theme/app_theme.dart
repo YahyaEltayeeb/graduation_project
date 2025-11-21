@@ -9,6 +9,7 @@ abstract class AppTheme {
     return ThemeData(
       scaffoldBackgroundColor: AppColors.lightBackground,
       colorScheme: ColorScheme.light(
+        brightness: Brightness.light,
         primary: AppColors.lightPrimary,
         secondary: AppColors.lightProgress,
         surface: AppColors.lightCard,
@@ -20,6 +21,7 @@ abstract class AppTheme {
       ),
       primaryIconTheme: IconThemeData(color: AppColors.darkBottomNav),
       iconTheme: IconThemeData(color: AppColors.darkBottomNav),
+
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.lightCard,
         centerTitle: true,
@@ -47,6 +49,7 @@ abstract class AppTheme {
     return ThemeData(
       scaffoldBackgroundColor: AppColors.darkBackground,
       colorScheme: ColorScheme.dark(
+        brightness: Brightness.dark,
         primary: AppColors.darkPrimary,
         secondary: AppColors.darkProgress,
         surface: AppColors.darkCard,

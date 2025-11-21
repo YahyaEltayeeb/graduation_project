@@ -25,7 +25,7 @@ class CustomElevatedButton extends StatelessWidget {
     final borderRadius = BorderRadius.circular(context.height * 0.015);
     final buttonWidth = isLoading
         ? context.width * 0.3
-        : MediaQuery.of(context).size.width * 0.7;
+        : MediaQuery.of(context).size.width*0.7;
 
     return Center(
       child: AnimatedContainer(
@@ -56,7 +56,8 @@ class CustomElevatedButton extends StatelessWidget {
             : ElevatedButton(
                 onPressed: onPressed,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.lightProgress,
+                  backgroundColor:
+                     AppColors.lightProgress,
                   shape: RoundedRectangleBorder(borderRadius: borderRadius),
                 ),
                 child: DefaultTextStyle(

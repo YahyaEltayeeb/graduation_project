@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graduation_project/config/routing/app_routes.dart';
+import 'package:graduation_project/config/routing/routing_generator.dart';
 import 'package:graduation_project/config/theme/app_theme.dart';
 import 'package:graduation_project/core/di/di.dart';
 import 'package:graduation_project/core/general_cubit/general_state.dart';
@@ -31,8 +33,8 @@ class SuperFitnessApp extends StatelessWidget {
           locale: state.locale,
           theme: state.isDark ? AppTheme.darkTheme : AppTheme.lightTheme,
           debugShowCheckedModeBanner: false,
-          // onGenerateRoute: RouteGenerator.getRoute,
-          // initialRoute: AppRoutes.appSections,
+          onGenerateRoute: RouteGenerator.getRoute,
+          initialRoute: AppRoutes.appSections,
           home:AppSection(),
         );
       },
