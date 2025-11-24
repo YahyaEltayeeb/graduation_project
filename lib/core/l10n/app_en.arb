@@ -71,5 +71,14 @@
   "enter_your_details_to_register":"Enter your details to register",
   "google":"Google",
   "facebook":"Facebook",
-  "select_an_option":"Select an option"
+  "select_an_option":"Select an option",
+  "assessment":"Assessment",
+  "are_you_ready_to_take":"Are you ready to take",
+  "the_test_and_determine":"the test and determine",
+  "your_level":"your level?",
+  "this_exam_is_monitored_automatically_any_detected":"This exam is monitored automatically. Any detected",
+  "cheating_may_result_in_your_session_being_canceled":"cheating may result in your session being canceled",
+"and_disciplinary_action_being_taken_if_you_encounter":"and disciplinary action being taken. If you encounter",
+"technical_problem_report_it_to_support_immediately":"a technical problem, report it to support immediately.",
+"start":"Start"
   }
