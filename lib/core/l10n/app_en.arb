@@ -42,5 +42,7 @@
   "enter_your_details_to_register":"Enter your details to register",
   "google":"Google",
   "facebook":"Facebook",
-  "select_an_option":"Select an option"
+  "select_an_option":"Select an option",
+  "login_success":"LoginSuccessfully",
+  "register_success":"Successfully"
   }
