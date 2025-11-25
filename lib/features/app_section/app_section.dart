@@ -1,10 +1,74 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:graduation_project/core/extensions/extensions.dart';
+import 'package:graduation_project/features/app_section/widget/custom_drawer.dart';
+import 'package:graduation_project/features/auth/profile/presentation/pages/profile_screen.dart';
+import 'package:graduation_project/features/courses/presentation/pages/courses_screen.dart';
+import 'package:graduation_project/features/home/presentation/pages/home_screen.dart';
+import 'package:graduation_project/features/jobs/presentation/pages/jobs_screen.dart';
 
-class AppSection extends StatelessWidget {
+class AppSection extends StatefulWidget {
   const AppSection({super.key});
 
   @override
+  State<AppSection> createState() => _AppSectionState();
+}
+
+class _AppSectionState extends State<AppSection> {
+  final PageStorageBucket _bucket = PageStorageBucket();
+
+  int _currentIndex = 0;
+
+  final List<Widget> pages = const [
+    HomeScreen(),
+    CoursesScreen(),
+    JobsScreen(),
+    ProfileScreen(),
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    var locale = context.localization;
+    return Scaffold(
+      drawer: CustomDrawer(),
+      appBar: AppBar(elevation: 0,
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+      ),
+      body: PageStorage(bucket: _bucket, child: pages[_currentIndex]),
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        enableFeedback: false,
+        currentIndex: _currentIndex,
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.home_outlined),
+            label: locale.home,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.play_circle_outline_rounded),
+            label: locale.courses,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.work_outline),
+            label: locale.jobs,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: locale.profile,
+          ),
+        ],
+      ),
+    );
   }
 }
