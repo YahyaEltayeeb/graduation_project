@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/app_section/app_section.dart';
+import 'package:graduation_project/features/auth/register/presentation/pages/register_screen.dart';
+import 'package:graduation_project/features/auth/register/presentation/pages/stu_register_screen.dart';
 import 'package:graduation_project/features/home/presentation/pages/home_screen.dart';
 import 'package:graduation_project/features/auth/login/register/register_screen.dart';
 import 'package:graduation_project/features/auth/login/register/stu_register_screen.dart';
