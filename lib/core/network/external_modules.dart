@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -12,11 +15,19 @@ import 'network_constants.dart';
 abstract class ExternalModules {
   @lazySingleton
   Dio provideDio() {
+    
     Dio dio = Dio();
     dio.options.baseUrl = NetworkConstants.baseUrl;
-    dio.options.headers = {'Content-Type': 'application/json'};
+     (dio.httpClientAdapter as DefaultHttpClientAdapter)
+      .onHttpClientCreate = (HttpClient client) {
+    client.badCertificateCallback =
+        (X509Certificate cert, String host, int port) => true;
+    return client;
+  };
+   // dio.options.headers = {'Content-Type': 'application/json'};
     dio.interceptors.add(getIt.get<PrettyDioLogger>());
     dio.interceptors.add(getIt.get<TokenInterceptor>());
+    
     return dio;
   }
 

@@ -22,7 +22,7 @@ class LoginViewModel extends Cubit<LoginState> {
         emit(
           state.copyWith(
             isLoading: false,
-            errorMessage: result.failure.errorMessage,
+            errorMessage: result.failure,
           ),
         );
     }

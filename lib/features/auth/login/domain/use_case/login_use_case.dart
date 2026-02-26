@@ -1,7 +1,7 @@
 import 'package:graduation_project/core/network/api_results.dart';
 import 'package:graduation_project/features/auth/login/domain/entities/login_request_entity.dart';
 import 'package:graduation_project/features/auth/login/domain/entities/user_model_login_entity.dart';
-import 'package:graduation_project/features/auth/login/domain/repo_imp/login_repo.dart';
+import 'package:graduation_project/features/auth/login/domain/repo/login_repo.dart';
 import 'package:injectable/injectable.dart';
 @injectable
 class LoginUseCase {

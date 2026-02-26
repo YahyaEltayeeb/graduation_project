@@ -4,7 +4,7 @@ import 'package:graduation_project/features/auth/login/data/data_source/login_ds
 import 'package:graduation_project/features/auth/login/data/model/mapper/login_mapper.dart';
 import 'package:graduation_project/features/auth/login/domain/entities/login_request_entity.dart';
 import 'package:graduation_project/features/auth/login/domain/entities/user_model_login_entity.dart';
-import 'package:graduation_project/features/auth/login/domain/repo_imp/login_repo.dart';
+import 'package:graduation_project/features/auth/login/domain/repo/login_repo.dart';
 import 'package:injectable/injectable.dart';
 @Injectable(as: LoginRepo)
 class LoginRepoImp implements LoginRepo {

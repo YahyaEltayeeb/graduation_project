@@ -4,9 +4,9 @@ import 'package:graduation_project/features/auth/login/data/model/request/login_
 import 'package:graduation_project/features/auth/login/data/model/response/login_response_dto.dart';
 import 'package:graduation_project/features/auth/register/data/model/request/register_request_dto.dart';
 import 'package:graduation_project/features/auth/register/data/model/response/register_response_dto.dart';
+import 'package:graduation_project/features/cv_coach/data/models/response/cv_analysis_response_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
-
 part 'api_services.g.dart';
 
 @RestApi()
@@ -20,4 +20,8 @@ abstract class ApiServices {
   );
   @POST(EndPoints.login)
   Future<LoginResponseDto> loginUser(@Body() LoginRequestDto loginRequestDto);
+
+  @POST(EndPoints.cvCoash)
+  @MultiPart()
+  Future<CvAnalysisResponseDto> cvCoash(@Part(name: "file") MultipartFile file);
 }
